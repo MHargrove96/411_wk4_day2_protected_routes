@@ -5,11 +5,6 @@ import cookie from "cookie";
 import { TextField, Button, Container } from "@material-ui/core";
 
 function App() {
-  // const [state, setState] = useState({
-  //   username: "",
-  //   password: "",
-  // });
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
@@ -20,26 +15,18 @@ function App() {
   }, [username, password]);
 
   const handleUsername = (e) => {
-    // const state = { ...state };
     setUsername(e.target.value);
   };
 
   const handlePassword = (e) => {
-    // const state = { ...state };
     setPassword(e.target.value);
   };
 
   const login = (e) => {
     e.preventDefault();
 
-    // set cookie here
-    // cookie.serialize("loggedIn", true);
-    // const cookies = cookie.parse(document.cookie);
-    // console.log(cookie);
-    // history.push("/");
-    // set loggedIn = true and max-age = 60*1000 (one minute)
-
-    // window.location.replace("/");
+    document.cookie = "loggedIn=true;max-age=60*1000";
+    history.push("/");
   };
 
   return (

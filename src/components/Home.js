@@ -3,8 +3,10 @@ import { Card, CardContent, CardActions, Divider } from '@material-ui/core'
 import cars from '../cars.json'
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props)
     console.log('CARS', cars)
+ 
     return (
         <div className="card-container">
             {cars.map((car, idx) => (
